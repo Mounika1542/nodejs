@@ -1,0 +1,85 @@
+Chapter 7 – File System (Advanced), Streams & Buffers
+1. Advanced File System (fs) Module
+
+Node.js fs module lets you read, write, update, delete, and watch files.
+
+Async vs Sync
+
+Async: Non-blocking, preferred
+
+Sync: Blocking, simple for small scripts
+
+2. File Operations
+a) Reading Files
+fs.readFile("file.txt", "utf8", (err, data) => {
+    if (err) throw err;
+    console.log(data);
+});
+
+b) Writing Files
+fs.writeFile("file.txt", "Hello Chapter 7!", (err) => {
+    if (err) throw err;
+    console.log("File written successfully");
+});
+
+c) Appending Files
+fs.appendFile("file.txt", "\nAppended text", (err) => {
+    if (err) throw err;
+    console.log("Text appended!");
+});
+
+d) Deleting Files
+fs.unlink("file.txt", (err) => {
+    if (err) throw err;
+    console.log("File deleted");
+});
+
+e) Renaming Files
+fs.rename("file.txt", "newfile.txt", (err) => {
+    if (err) throw err;
+    console.log("File renamed");
+});
+
+3. Streams in Node.js
+
+Streams allow reading/writing large files efficiently without loading everything in memory.
+
+a) Readable Stream
+const readStream = fs.createReadStream("largefile.txt", "utf8");
+readStream.on("data", (chunk) => {
+    console.log("Received chunk:", chunk);
+});
+
+b) Writable Stream
+const writeStream = fs.createWriteStream("output.txt");
+writeStream.write("Hello using writable stream\n");
+writeStream.end("Stream finished!");
+
+c) Pipe Streams
+const readStream = fs.createReadStream("input.txt");
+const writeStream = fs.createWriteStream("output.txt");
+
+readStream.pipe(writeStream);
+
+4. Buffers in Node.js
+
+Buffers are temporary memory storage used to handle binary data in Node.js.
+
+const buf = Buffer.from("Hello Buffer");
+console.log(buf.toString()); // Convert to string
+console.log(buf.length);      // Size in bytes
+
+
+Buffers are often used with Streams for faster file and network operations.
+
+5. Summary
+
+fs module → advanced file operations
+
+Async vs Sync operations
+
+Streams → efficiently handle large files
+
+Buffers → store binary data
+
+Pipe → connect readable & writable streams
