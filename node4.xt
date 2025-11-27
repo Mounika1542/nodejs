@@ -1,0 +1,105 @@
+Chapter 4 – HTTP Module & Creating a Basic Server
+1. What is the HTTP Module?
+
+Node.js has a built-in module named http that allows you to:
+
+Create a server
+
+Handle requests & responses
+
+Send data to the browser
+
+Build APIs
+
+No installation needed:
+
+const http = require("http");
+
+2. Creating a Simple Server
+
+A server listens for requests and sends back responses.
+
+Basic structure:
+
+http.createServer((req, res) => {
+    res.write("Hello from Node.js Server");
+    res.end();
+}).listen(3000);
+
+
+req → request from the client
+
+res → reply from server
+
+.listen(3000) → server starts at port 3000
+
+3. Request & Response Explanation
+Request (req)
+
+Contains:
+
+URL (/home, /about)
+
+HTTP Method (GET, POST)
+
+Headers
+
+Response (res)
+
+Used to send:
+
+text
+
+HTML
+
+JSON
+
+status codes
+
+Example:
+
+res.writeHead(200, { "Content-Type": "text/plain" });
+res.end("Success");
+
+4. Serving HTML Content
+
+You can send HTML directly:
+
+res.write("<h1>Welcome</h1>");
+
+
+Or you can read HTML files and send them using fs module.
+
+5. Routing in Node.js (Without Express)
+
+You can manually create routes:
+
+if (req.url === "/") {
+    res.end("Home Page");
+}
+else if (req.url === "/about") {
+    res.end("About Page");
+}
+else {
+    res.end("404 Page Not Found");
+}
+
+6. Sending JSON Response
+const data = { name: "Mounika", language: "Node.js" };
+res.end(JSON.stringify(data));
+
+7. Summary of This Chapter
+
+By completing Chapter 4, you understand:
+
+What HTTP module is
+
+How to create a Node.js server
+
+Handling requests and responses
+
+Sending HTML and JSON
+
+Basic routing without Express
+
+This is the foundation for building backend systems and APIs.
