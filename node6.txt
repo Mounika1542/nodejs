@@ -1,0 +1,134 @@
+Here is **Node.js – Chapter 6** in the same style as your previous chapters (simple, clean, beginner-friendly).
+
+---
+
+# 🚀 **Node.js – Chapter 6: Modules in Node.js (Built-in, Local & External)**
+
+Modules are one of the **most important parts of Node.js**.
+They help you break your code into **small, reusable pieces**.
+
+---
+
+# ⭐ 1. What is a Module?
+
+A **module** = a file or package that contains code you can reuse.
+
+Node.js uses **CommonJS module system**, so we use:
+
+* `require()` → to import
+* `module.exports` → to export
+
+---
+
+# ⭐ 2. Types of Modules in Node.js
+
+## ✔ **1. Core (Built-in) Modules**
+
+These are already included in Node.js.
+
+Examples:
+
+* `fs` → File system
+* `http` → Create server
+* `os` → System info
+* `path` → Work with file paths
+
+**Example:**
+
+```js
+const os = require("os");
+
+console.log("Total Memory:", os.totalmem());
+console.log("Free Memory:", os.freemem());
+```
+
+---
+
+## ✔ **2. Local Modules**
+
+These are files you create yourself.
+
+Example:
+
+**math.js**
+
+```js
+function add(a, b) {
+    return a + b;
+}
+
+module.exports = add;
+```
+
+**app.js**
+
+```js
+const add = require("./math");
+
+console.log(add(10, 20));
+```
+
+---
+
+## ✔ **3. External Modules (Using npm)**
+
+These are packages installed using **npm**.
+
+Example: Install lodash
+
+```
+npm install lodash
+```
+
+Use in code:
+
+```js
+const _ = require("lodash");
+
+console.log(_.upperCase("hello node"));
+```
+
+---
+
+# ⭐ 3. Exporting in Node.js
+
+## ✔ Export a single function
+
+```js
+module.exports = function(name){
+    console.log("Hello " + name);
+}
+```
+
+## ✔ Export multiple values
+
+```js
+module.exports = {
+    add: (a, b) => a + b,
+    mul: (a, b) => a * b
+};
+```
+
+---
+
+#  4. Importing in Node.js
+
+```js
+const math = require("./math");
+
+console.log(math.add(5, 10));
+console.log(math.mul(2, 3));
+```
+
+---
+
+#  5. Why Modules Are Important?
+
+✔ Code becomes easy to maintain
+✔ Avoid writing duplicate code
+✔ Increase reusability
+✔ You can organize your project cleanly
+✔ Helps you build larger applications
+
+---
+
