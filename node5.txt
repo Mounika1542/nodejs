@@ -1,0 +1,108 @@
+Chapter 5 – Events & EventEmitter in Node.js
+1. What Are Events in Node.js?
+
+Node.js works on an event-driven architecture.
+
+Events are actions that happen in the system, such as:
+
+File opened
+
+Data received
+
+User clicked
+
+Server started
+
+Node.js uses an EventEmitter class to manage events.
+
+2. EventEmitter
+
+EventEmitter is part of Node.js events module.
+
+Use it like this:
+
+const EventEmitter = require("events");
+const emitter = new EventEmitter();
+
+
+You can:
+
+Create Events
+
+Listen to Events
+
+Emit Events
+
+3. Creating & Listening to Events
+Listening to an event
+emitter.on("greet", () => {
+    console.log("Hello! Event triggered");
+});
+
+Emitting an event
+emitter.emit("greet");
+
+4. Passing Data with Events
+
+Events can send data to listeners:
+
+emitter.on("message", (name) => {
+    console.log("Message from", name);
+});
+
+emitter.emit("message", "Mounika");
+
+5. Multiple Listeners for Same Event
+
+One event → multiple listeners:
+
+emitter.on("start", () => console.log("Listener 1"));
+emitter.on("start", () => console.log("Listener 2"));
+
+emitter.emit("start");
+
+6. Once() – Listen Only One Time
+
+Use .once() for one-time events:
+
+emitter.once("load", () => {
+    console.log("Loaded once!");
+});
+
+emitter.emit("load");
+emitter.emit("load"); // ignored
+
+7. Real-Life Uses of Events
+
+Events are used in:
+
+Streams
+
+HTTP server
+
+Database actions
+
+User actions
+
+Timers
+
+File system operations
+
+Example:
+server.on('request', ...) → Fires whenever a user opens your website.
+
+8. Summary of Chapter 5
+
+You learned:
+
+What events are
+
+EventEmitter class
+
+Creating and emitting events
+
+Passing data
+
+Using on, emit, once
+
+Multiple listeners
