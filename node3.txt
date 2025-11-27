@@ -1,0 +1,92 @@
+Chapter 3 – Node.js Modules & File System
+1. What Are Modules in Node.js?
+
+Modules are separate files or features that you can include in your Node.js program.
+They help break large programs into smaller, reusable parts.
+
+   Node.js has 2 types of modules:
+
+   Built-in Modules →  already available in Node.js
+
+   Custom Modules → created by you
+
+   External Modules → installed using npm
+
+2. Built-in Modules in Node.js
+
+   Some commonly used built-in modules:
+
+   fs → File System
+
+   http → Create server
+
+   path → Work with file paths
+
+   os → Operating system details
+
+   To use a module:
+
+  const fs = require("fs");
+
+3. File System Module (fs)
+
+   This module allows you to:
+
+   Create files
+
+   Read files
+ 
+   Update files
+
+   Delete files
+
+   Rename files
+
+  Examples of FS operations:
+
+fs.writeFile()
+
+fs.appendFile()
+
+fs.readFile()
+
+fs.unlink()
+
+fs.rename()
+
+4. Synchronous vs Asynchronous
+
+Node.js operations are mostly asynchronous (non-blocking).
+But every FS operation has a sync version:
+
+Examples:
+
+readFile() → async
+
+readFileSync() → sync
+
+Async is preferred for performance.
+
+5. Creating Your Own Module
+
+Any .js file becomes a module.
+You can export functions using:
+
+module.exports = functionName;
+
+
+And import using:
+
+const fn = require("./myModule");
+
+6. Summary of This Chapter
+
+Modules allow organized coding
+
+Use built-in modules like fs, http, os, path
+
+FS module helps in reading/writing files
+
+Difference between sync & async functions
+
+Custom modules help reuse your own code
