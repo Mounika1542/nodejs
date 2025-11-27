@@ -2,14 +2,14 @@ Here is **Node.js – Chapter 6** in the same style as your previous chapters (s
 
 ---
 
-# 🚀 **Node.js – Chapter 6: Modules in Node.js (Built-in, Local & External)**
+#  **Node.js – Chapter 6: Modules in Node.js (Built-in, Local & External)**
 
 Modules are one of the **most important parts of Node.js**.
 They help you break your code into **small, reusable pieces**.
 
 ---
 
-# ⭐ 1. What is a Module?
+#  1. What is a Module?
 
 A **module** = a file or package that contains code you can reuse.
 
@@ -20,9 +20,9 @@ Node.js uses **CommonJS module system**, so we use:
 
 ---
 
-# ⭐ 2. Types of Modules in Node.js
+# 2. Types of Modules in Node.js
 
-## ✔ **1. Core (Built-in) Modules**
+##  **1. Core (Built-in) Modules**
 
 These are already included in Node.js.
 
@@ -44,7 +44,7 @@ console.log("Free Memory:", os.freemem());
 
 ---
 
-## ✔ **2. Local Modules**
+##  **2. Local Modules**
 
 These are files you create yourself.
 
@@ -70,7 +70,7 @@ console.log(add(10, 20));
 
 ---
 
-## ✔ **3. External Modules (Using npm)**
+##  **3. External Modules (Using npm)**
 
 These are packages installed using **npm**.
 
@@ -90,9 +90,9 @@ console.log(_.upperCase("hello node"));
 
 ---
 
-# ⭐ 3. Exporting in Node.js
+# 3. Exporting in Node.js
 
-## ✔ Export a single function
+##  Export a single function
 
 ```js
 module.exports = function(name){
@@ -100,7 +100,7 @@ module.exports = function(name){
 }
 ```
 
-## ✔ Export multiple values
+##  Export multiple values
 
 ```js
 module.exports = {
@@ -124,11 +124,11 @@ console.log(math.mul(2, 3));
 
 #  5. Why Modules Are Important?
 
-✔ Code becomes easy to maintain
-✔ Avoid writing duplicate code
-✔ Increase reusability
-✔ You can organize your project cleanly
-✔ Helps you build larger applications
+ Code becomes easy to maintain
+ Avoid writing duplicate code
+ Increase reusability
+ You can organize your project cleanly
+ Helps you build larger applications
 
 ---
 
