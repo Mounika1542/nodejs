@@ -1,1 +1,28 @@
 
+// Chapter 2 Example Code – Node.js Basics & NPM
+
+// 1. Basic Node.js program
+console.log("Welcome to Chapter 2 of Node.js!");
+
+// 2. Create a simple function
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+console.log(greet("Developer"));
+
+// 3. Using a built-in module (os)
+const os = require("os");
+console.log("Operating System:", os.platform());
+console.log("CPU Cores:", os.cpus().length);
+
+// 4. Example of using an external package (Express)
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+    res.send("This is Chapter 2 – Node.js with Express!");
+});
+
+app.listen(5000, () => {
+    console.log("Server running on port 5000");
+});
