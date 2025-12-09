@@ -7,12 +7,12 @@ Async vs Sync
 
 Async: Non-blocking, preferred
 
-Sync: Blocking, simple for small scripts
+Sync: Blocking, simple for small  scripts
 
 
 2. File Operations
 a) Reading Files
-fs.readFile("file.txt", "utf8", (err, data) => {
+fs.readFile("file.txt",  "utf8", (err, data) => {
     if (err) throw err;
     console.log(data);
 });
