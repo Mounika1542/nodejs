@@ -49,3 +49,19 @@ const getUsers = (req, res) => {
     { id: 2, name: "Keerthi" }
   ]);
 };
+
+
+
+// POST create user
+const createUser = (req, res) => {
+  const { name } = req.body;
+
+  if (!name) {
+    return res.status(400).json({ message: "Name is required" });
+  }
+
+  res.json({
+    message: "User created successfully",
+    user: { name }
+  });
+};
