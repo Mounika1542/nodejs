@@ -42,3 +42,10 @@ app.use((req, res, next) => {
 /**
  * USER CONTROLLER
  */
+// GET all users
+const getUsers = (req, res) => {
+  res.json([
+    { id: 1, name: "Mounika" },
+    { id: 2, name: "Keerthi" }
+  ]);
+};
